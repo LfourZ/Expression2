@@ -1,0 +1,31 @@
+@name Entity Spawn
+@inputs 
+@outputs 
+@persist Balls Target:string
+@trigger 
+
+if(first()) {
+    Target = "fas2_thrown_ammobox"
+}
+
+interval(1)
+
+if(owner():keyPressed("g")) {
+    concmd("ent_create " + Target)
+    Balls++
+}
+if(owner():keyPressed("h")) {
+    concmd("ent_remove_all " + Target)
+    Balls = 0
+}
+
+
+
+
+print(Balls)
+
+
+if(Balls<0) {
+    concmd("ent_create " + Target)
+    Balls++
+}

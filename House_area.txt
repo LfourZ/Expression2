@@ -1,0 +1,33 @@
+@name House area
+@inputs 
+@outputs 
+@persist Posa:vector Posb:vector Total
+@trigger 
+
+interval(1000)
+
+if(first()) {
+    Total = 0
+    Prevtot = 0
+}
+
+if(owner():keyPressed("b")) {
+    Posa = owner():aimPos()
+    if(Posa:z()!=Posb:z()) {
+        hint("Position A and B are not at the same height!", 5)
+    }
+    print("Pos A set @ " + toString(Posa))
+}
+if(owner():keyPressed("n")) {
+    Posb = owner():aimPos()
+    if(Posa:z()!=Posb:z()) {
+        hint("Position A and B are not at the same height!", 5)
+    }
+    print("Pos B set @ " + toString(Posa))
+}
+if(owner():keyPressed("m")) {
+    Add = Posa:z()*Posb:z()
+    Total = Total + Posa:z()*Posb:z()
+    print(toString(Prevtot) + "+" + toString(Add) + "=" + toString(Total) + "(" + toString(Posa:z()) + "*" + toString(Posb:z()) + ")")
+}
+

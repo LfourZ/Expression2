@@ -1,0 +1,40 @@
+@name Random Prop Rain
+@inputs 
+@outputs 
+@persist Target:entity Random L:array
+@trigger 
+
+if(first()) {
+    L[1,string]="models/props/cs_assault/dollar.mdl"
+    #[L[2,string]="models/food/hotdog.mdl"
+    L[3,string]="models/props_c17/doll01.mdl"
+    L[4,string]="models/Gibs/HGIBS.mdl"
+    L[5,string]="models/props_2fort/cow001_reference.mdl"
+    L[6,string]="models/props_junk/garbage_glassbottle003a.mdl"
+    L[7,string]="models/props_junk/sawblade001a.mdl"
+    L[8,string]="models/props_phx/ball.mdl"
+    L[9,string]="models/props_junk/watermelon01.mdl"
+    L[10,string]="models/props_lab/monitor02.mdl"
+    L[11,string]="models/props_lab/huladoll.mdl"
+    L[12,string]="models/props_c17/TrapPropeller_Engine.mdl"
+    L[13,string]="models/items/medkit_large_bday.mdl"
+    L[14,string]="models/weapons/w_models/w_sd_sapper.mdl"
+    L[15,string]="models/props_c17/oildrum001_explosive.mdl"
+    L[16,string]="models/props_junk/ravenholmsign.mdl"
+    L[17,string]="models/props_c17/streetsign004e.mdl"]#
+}
+
+
+
+TargetPos = vec(findPlayerByName(owner():lastSaid()):pos():x()+random(1000)-500,findPlayerByName(owner():lastSaid()):pos():y()+random(1000)-500,5000)
+interval(250)
+
+Random = random(L:count()) + 1
+propSpawn(L[Random,string],TargetPos,0)#:setTrails(500,200,25,"trails/electric",vec(random(255),0,random(255)),255)
+
+
+
+if(owner():keyPressed("g")) {
+    propDeleteAll()
+}
+

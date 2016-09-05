@@ -1,0 +1,36 @@
+@name Example E2 For Digital Screen By TerraDestroy
+@inputs DS:wirelink
+@persist Res X Y
+
+if(first()){
+    function wirelink:initScreen(Res){
+        This[1048574]=0 #Reset Screen and whatever was on it will be cleared.
+        This[1048569]=3 #Set color mode to 3
+        This[1048575]=1 #Apply changes
+        This[1048572]=Res
+        This[1048573]=Res
+    }   
+    function wirelink:drawPixel(X,Y,Color:vector,Res){
+        This[X+Y*Res]=rgb2digi(Color,3)
+    }
+    Res=127
+    DS:initScreen(Res)
+}
+interval(100)
+
+DS:drawPixel(X,Y,vec(round((owner():pos():z()+10023)*7.5),0,0),Res)
+
+X++
+
+if(X==Res){
+    X=0,Y++
+}
+if(Y==Res){
+    Y=0
+}
+
+
+#vec(((X*Y)/4)-1)
+#vec(X+Y)
+
+

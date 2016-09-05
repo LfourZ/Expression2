@@ -1,0 +1,9 @@
+@name Sped
+@inputs 
+@outputs Sped
+@persist Last
+@trigger 
+
+interval(25)
+Sped=(owner():vel():length()-Last)*2
+Last=owner():vel():length()

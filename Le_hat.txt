@@ -1,0 +1,22 @@
+@name Le hat
+@inputs 
+@outputs 
+@persist Target:entity
+@trigger 
+
+
+
+if(first()) {
+    Target = findPlayerByName("puttal")
+    
+    
+}
+
+
+
+
+
+
+interval(10)
+
+applyOffsetForce(Target:pos() + vec(0,0,100),entity():pos())

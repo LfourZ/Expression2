@@ -1,0 +1,19 @@
+@name Slam jam
+@inputs 
+@outputs 
+@persist X
+@trigger 
+
+interval(1500)
+if(first()) {
+    X = 1
+}
+
+if(X) {
+    concmd("say Come on down and slam")
+    X = 0
+}
+else {
+    concmd("say And welcome to the jam")
+    X = 1
+}

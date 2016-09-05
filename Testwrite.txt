@@ -1,0 +1,7 @@
+@name Testwrite
+@inputs 
+@outputs 
+@persist 
+@trigger 
+
+fileWrite("test.txt",gTable("Primes",1):toTable():toString())

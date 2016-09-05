@@ -1,0 +1,74 @@
+@name MoneyRewardTest
+@inputs 
+@outputs 
+@persist Players:array Frags:array Money:array Killreward Deathreward Deaths:array
+@trigger 
+
+interval(500)
+runOnChat(1)
+
+
+if(first()) {
+    Killreward = 1000
+    Deathreward = 0
+    Players = players()
+    for(I = 1, Players:count()) {
+        Frags[I,number] = Players[I,entity]:frags()
+    }
+    for(I = 1, Players:count()) {
+        Deaths[I,number] = Players[I,entity]:deaths()
+    }
+}
+
+#[if(Players:count()!=players():count()) {
+    Players = players()
+    for(I = 1, Players:count()) {
+        Frags[I,number] = Players[I,entity]:frags()
+    }
+    for(I = 1, Players:count()) {
+        Deaths[I,number] = Players[I,entity]:deaths()
+    }
+}]#
+
+
+
+
+for(I = 1, Players:count()) {
+    if(Killreward!=0) {
+        if(Players[I,entity]:frags()!=Frags[I,number])  {
+            Frags[I,number] = Players[I,entity]:frags()
+            Money[I,number] = Money[I,number] + Killreward
+        }
+        if(Deathreward!=0) {
+            if(Players[I,entity]:deaths()!=Deaths[I,number])  {
+                Deaths[I,number] = Players[I,entity]:deaths()
+                Money[I,number] = Money[I,number] + Deathreward
+            }
+        }
+    }
+}
+
+
+if(chatClk()) {
+    if(lastSpoke():lastSaid() == "/money") {
+        for(I = 1, Players:count()) {
+            if(lastSpoke() == Players[I,entity]) {
+                concmd("say " + Players[I,entity]:name() + " has " + Money[I,number]:toString() + " credits")
+                break
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#print(Money,Players,Frags)

@@ -1,0 +1,40 @@
+@name Spops overdrive
+@inputs L:array
+@outputs Pos:vector Local Color:vector Fadetime GroundBeam LineBeam Size Clear Active
+@persist Spops Lowcolor:vector Highcolor:vector
+@trigger 
+
+if(first()) {
+    Spops = 1
+    
+    Local = L[1+(Spops*10),number]              #Local
+    Fadetime = L[2+(Spops*10),number]           #Fadetime
+    GroundBeam = L[3+(Spops*10),number]         #Ground
+    LineBeam = L[4+(Spops*10),number]           #Trail
+    Size = L[5+(Spops*10),number]               #Size
+    Active = L[7+(Spops*10),number]             #Active
+    Lowcolor = L[8+(Spops*10),vector]           #Lowcolor
+    Highcolor = L[9+(Spops*10),vector]         #Highcolor
+}
+
+
+
+
+
+if(L[6+(Spops*10),string]=="refresh") {
+    Local = L[1+(Spops*10),number]              #Local
+    Fadetime = L[2+(Spops*10),number]           #Fadetime
+    GroundBeam = L[3+(Spops*10),number]         #Ground
+    LineBeam = L[4+(Spops*10),number]           #Trail
+    Size = L[5+(Spops*10),number]               #Size
+    Active = L[7+(Spops*10),number]             #Active
+    Lowcolor = L[8+(Spops*10),vector]           #Lowcolor
+    Highcolor = L[9+(Spops*10),vector]         #Highcolor
+}
+
+interval(L[777777,number])
+
+Pos = L[10000+Spops,entity]:pos()+randvec(30*Spops*-1,30*Spops)
+Color = randvec(Lowcolor,Highcolor)
+
+

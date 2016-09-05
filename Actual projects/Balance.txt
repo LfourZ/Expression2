@@ -1,0 +1,51 @@
+@name Balance
+@inputs Ah:vector Bh:vector Ch:vector Dh:vector Up Down
+@outputs At Bt Ct Dt Target:vector
+@persist Target:vector
+@trigger all
+
+if(first()) {
+    Target = vec(0,0,-10000)
+}
+
+
+interval(10)
+
+if(Up&!Up) {
+    Target = Target + 100
+}
+
+if(Down&!Down) {
+    Target = Target - 100
+}
+
+
+if(Ah:z() < Target:z()) {
+    At = 1
+}
+else {
+    At = 0
+}
+
+if(Bh:z() < Target:z()) {
+    Bt = 1
+}
+else {
+    Bt = 0
+}
+
+if(Ch:z() < Target:z()) {
+    Ct = 1
+}
+else {
+    Ct = 0
+}
+
+if(Dh:z() < Target:z()) {
+    Dt = 1
+}
+else {
+    Dt = 0
+}
+
+

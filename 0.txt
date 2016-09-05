@@ -1,0 +1,19 @@
+@name TECHNOLOGY
+@inputs Refresh S:wirelink
+@outputs 
+@persist Something:array Totmass
+@trigger Refresh
+
+if(first()|Refresh) {
+    Something = entity():getConstraints()
+    Totmass = 0
+    foreach(K,Tg:entity=Something) {
+        print(round(Tg:mass()))
+        Totmass += round(Tg:mass())
+    }
+}
+
+interval(1000)
+
+S:writeString("Total Mass: " + toString(Totmass),0,0)
+

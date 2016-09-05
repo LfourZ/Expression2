@@ -1,0 +1,13 @@
+@name test
+@inputs 
+@outputs 
+@persist Sids:table
+@trigger 
+
+function updSids() {
+    for(I=1,players():count()) {
+        if(!Sids:exists(players()[I,entity]:steamID())) {
+            Sids:pushString(players()[I,entity]:steamID())
+        }
+    }
+}

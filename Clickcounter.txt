@@ -1,0 +1,47 @@
+@name Clickcounter
+@inputs S:wirelink
+@outputs 
+@persist Key:string Total Second Res Color:vector X
+@trigger 
+
+
+if(first()) {
+    Color = vec(255,0,0)
+    X = 1
+    Res = 20
+    Second = 0
+    Total = 0
+    timer("T",1000)
+    S[1048574]=0 #Reset Screen and whatever was on it will be cleared.
+    S[1048569]=3 #Set color mode to 3
+    S[1048575]=1 #Apply changes
+    S[1048572]=Res
+    S[1048573]=Res
+    
+    function wirelink:drawPixel(U,Y){
+        S[U+Y*Res]=rgb2digi(Color,3)
+    }
+}
+
+runOnKeys(owner(),1)
+
+
+if(keyClk()) {
+    Key = keyClkPressed()
+    if(Key=="g"|Key=="h") {
+        Total=Total+0.5
+        Second=Second+0.5
+    }
+}
+elseif(clk("T")) {
+    timer("T",1000)
+    S:drawPixel(X,floor(Second))
+    X++
+    print(Second)
+    Second = 0
+    if(X>Res) {
+        X = 1
+        S[1048574]=0 #Reset Screen and whatever was on it will be cleared.
+    }
+}
+

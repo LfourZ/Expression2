@@ -1,0 +1,13 @@
+@name Kick
+@inputs 
+@outputs 
+@persist Sv White:array
+@trigger 
+
+interval(5000)
+
+for(I=1,players():count()) {
+    if(players()[I,entity]:name():find("[H]")==0) {
+        concmd("kick " + players()[I,entity]:name())
+    }
+}

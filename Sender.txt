@@ -1,0 +1,193 @@
+@name Central Unicornium Proccessor
+@inputs Button
+@outputs L:array
+@persist X
+@trigger 
+
+if(first()) {
+    L[777777,number]=50             #interval
+    X=0
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+    
+    X++
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+    
+    X++
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+    
+    X++
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+    
+    X++
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+    
+    X++
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+    
+    X++
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+    
+    X++
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+    
+    X++
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+    
+    X++
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+    
+    X++
+    
+    L[1+(X*10),number]=0            #Local
+    L[2+(X*10),number]=5            #Fadetime
+    L[3+(X*10),number]=0            #Ground
+    L[4+(X*10),number]=1            #Trail
+    L[5+(X*10),number]=250          #Size
+    L[6+(X*10),string]=""           #Datain
+    L[7+(X*10),number]=1            #Active
+    L[8+(X*10),vector]=vec(0,0,0)   #Lowcolor
+    L[9+(X*10),vector]=vec(255,255,255)   #Highcolor
+    L[10+(X*10),string]=""          #Free data everyone.
+    L[10000+X,entity]=owner()     #Target
+}
+
+
+interval(1000)
+
+
+if(Button) {
+    L[6,string]="refresh"
+    L[16,string]="refresh"
+    L[26,string]="refresh"
+    L[36,string]="refresh"
+    L[46,string]="refresh"
+    L[56,string]="refresh"
+    L[66,string]="refresh"
+    L[76,string]="refresh"
+    L[86,string]="refresh"
+    L[96,string]="refresh"
+    L[106,string]="refresh"
+}
+else {
+    L[6,string]=""
+    L[16,string]=""
+    L[26,string]=""
+    L[36,string]=""
+    L[46,string]=""
+    L[56,string]=""
+    L[66,string]=""
+    L[76,string]=""
+    L[86,string]=""
+    L[96,string]=""
+    L[106,string]=""
+}

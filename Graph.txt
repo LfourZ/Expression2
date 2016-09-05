@@ -1,0 +1,35 @@
+@name Graph
+@inputs Screen:wirelink
+@outputs 
+@persist Res:number X Y 
+@trigger 
+
+
+if(first()) {
+    Res = 512
+    X = 0
+    Y = 0
+    Res2 = Res/2
+    function wirelink:initScreen(Res) {
+        Screen[1048574]=0 #Reset Screen and whatever was on it will be cleared.
+        Screen[1048569]=3 #Set color mode to 3
+        Screen[1048575]=1 #Apply changes
+        Screen[1048572]=Res #Set new resolution on Y (Height)
+        Screen[1048573]=Res #Set new resolution on X (Width)
+    }
+    
+    function wirelink:draw(X,Y,Color:vector) {
+        Screen[X+Y*Res]=rgb2digi(Color, 3)
+    }
+    
+    Screen:initScreen(Res)
+}
+
+interval(25)
+
+Screen:draw((X^2)+Res2,X,vec(255,0,0))
+X++
+
+if(X==Res) {
+    error("Done")
+}
