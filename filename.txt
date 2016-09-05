@@ -1,0 +1,11 @@
+@name 
+@inputs 
+@outputs 
+@persist 
+@trigger 
+
+interval(10)
+
+if(spawnClk()) {
+    lastSpawnedPlayer():plyStripWeapons()
+}
