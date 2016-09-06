@@ -1,7 +1,0 @@
-@name File test
-@inputs 
-@outputs 
-@persist 
-@trigger 
-
-fileWrite("bans.txt","eyoo")

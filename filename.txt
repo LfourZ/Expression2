@@ -1,9 +1,0 @@
-@name 
-@inputs 
-@outputs 
-@persist 
-@trigger 
-
-interval(10)
-
-npcSpawn("npc_monk",findPlayerByName("l4"):pos()+vec(0,0,100))
