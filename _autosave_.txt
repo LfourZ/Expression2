@@ -1,6 +1,19 @@
-@name The
+@name Pickuptest
 @inputs 
 @outputs 
-@persist 
+@persist Rot:number
 @trigger 
 
+interval(10)
+
+if(first()) {
+    holoCreate(1,entity():pos()+vec(100,0,14),vec(2,2,2),ang(0,0,0),vec(255,0,0),"cube")
+    holoCreate(2,entity():pos()+vec(-100,0,14),vec(2,2,2),ang(0,0,0),vec(0,255,0),"cube")
+    
+}
+
+for(I = 1, 2) {
+    holoAng(I,ang(0,Rot,0))
+}
+
+Rot++

@@ -1,0 +1,12 @@
+@name 
+@inputs 
+@outputs 
+@persist Data:string Array:array X Y
+@trigger 
+
+
+if(first()) {
+	Array = Data:explode(" ")
+	X = Array[1]
+	Y = Array[2]
+}
